@@ -20,25 +20,3 @@ client.on('data', (data) => {
 client.on('error', (err) => {
     console.log(err.message);
 });
-
-//*****************************/
-
-//-- Server Instance
-
-let serverSocket = net.createServer((socket) => {
-    socket.write('Testing Socket Server \n');
-
-    //--Handling server received data
-    socket.on('data', (data) => {
-        console.log(`server: ${data}`);
-    });
-
-    //--Handling server received data
-    socket.on('error', (error) => {
-        console.log(error);
-    });
-});
-
-//*****************************/
-
-serverSocket.listen(port);
